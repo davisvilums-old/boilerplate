@@ -1,3 +1,9 @@
+Link the generator to npm:
+Open folder and run
+```bash
+npm link
+```
+
 # generator-boilerplate [![Build Status](https://secure.travis-ci.org/davisvilums/generator-boilerplate.png?branch=master)](https://travis-ci.org/davisvilums/generator-boilerplate)
 
 > [Yeoman](http://yeoman.io) generator
