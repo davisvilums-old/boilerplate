@@ -1,7 +1,10 @@
 'use strict';
-var yeoman = require('yeoman-generator');
-var chalk = require('chalk');
+var generators = require('yeoman-generator');
 var yosay = require('yosay');
+var chalk = require('chalk');
+var wiredep = require('wiredep');
+var mkdirp = require('mkdirp');
+var _s = require('underscore.string');
 
 module.exports = yeoman.generators.Base.extend({
   prompting: function () {
@@ -15,7 +18,7 @@ module.exports = yeoman.generators.Base.extend({
     var prompts = [{
       type: 'input',
       name: 'greet',
-      message: 'Would you like to enable this option?',
+      message: 'Greetings this is test entry, currently here can be aything',
       default: 'Yo! Wasup?'
     }];
 
