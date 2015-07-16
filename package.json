@@ -20,14 +20,17 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.19.0",
-    "chalk": "^1.0.0",
-    "yosay": "^1.0.2"
+    "chalk": "^1.1.0",
+    "generator-jasmine": "^0.2.1",
+    "generator-mocha": "^0.2.0",
+    "mkdirp": "^0.5.1",
+    "underscore.string": "^3.1.1",
+    "wiredep": "^3.0.0-beta",
+    "yeoman-assert": "^2.0.0",
+    "yeoman-generator": "^0.20.2",
+    "yosay": "^1.0.4"
   },
   "devDependencies": {
-    "mkdirp": "^0.5.1",
-    "mocha": "*",
-    "underscore.string": "^3.1.1",
-    "wiredep": "^2.2.2"
+    "mocha": "*"
   }
 }
