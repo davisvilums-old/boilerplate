@@ -1,7 +1,7 @@
 'use strict';
-var generators = require('yeoman-generator');
-var yosay = require('yosay');
+var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
+var yosay = require('yosay');
 var wiredep = require('wiredep');
 var mkdirp = require('mkdirp');
 var _s = require('underscore.string');
@@ -126,5 +126,8 @@ module.exports = yeoman.generators.Base.extend({
 
   install: function () {
     this.installDependencies();
-  }
+  },
+
+  // end: function () {
+  // }
 });

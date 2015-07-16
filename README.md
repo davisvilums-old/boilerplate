@@ -4,6 +4,24 @@ Open folder and run
 npm link
 ```
 
+Install brew package manager on mac
+```bash
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+Install wget on mac
+```bash
+brew install wget
+```
+
+Update package.json dependencies
+```bash
+npm install -g npm-check-updates
+npm-check-updates -u
+npm install
+```
+
+
 
 
 # generator-boilerplate [![Build Status](https://secure.travis-ci.org/davisvilums/generator-boilerplate.png?branch=master)](https://travis-ci.org/davisvilums/generator-boilerplate)
