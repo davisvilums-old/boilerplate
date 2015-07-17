@@ -15,7 +15,7 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../.tmp/styles/main.css">
     <!-- endbuild -->
     <% if (includeModernizr) { %>
     <!-- build:js scripts/vendor/modernizr.js -->

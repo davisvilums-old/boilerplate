@@ -235,8 +235,8 @@ module.exports = generators.Base.extend({
       }
 
       this.fs.copyTpl(
-        this.templatePath('index.html'),
-        this.destinationPath('app/index.html'),
+        this.templatePath('index.php'),
+        this.destinationPath('app/index.php'),
         {
           appname: this.appname,
           includeSass: this.includeSass,
@@ -294,7 +294,7 @@ module.exports = generators.Base.extend({
       directory: 'bower_components',
       exclude: ['bootstrap-sass', 'bootstrap.js'],
       ignorePath: /^(\.\.\/)*\.\./,
-      src: 'app/index.html'
+      src: 'app/index.php'
     });
 
     if (this.includeSass) {

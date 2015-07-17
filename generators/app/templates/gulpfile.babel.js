@@ -50,13 +50,14 @@ gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 gulp.task('html', ['styles'], () => {
   const assets = $.useref.assets({searchPath: ['.tmp', 'app', '.']});
 
-  return gulp.src('app/*.html')
+  return gulp.src('app/*.php')
     .pipe(assets)
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.minifyCss({compatibility: '*'})))
     .pipe(assets.restore())
     .pipe($.useref())
-    .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
+    // .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
+    .pipe($.if('*.php', $.minifyHtml({conditionals: true, loose: true})))
     .pipe(gulp.dest('dist'));
 });
 
@@ -87,7 +88,8 @@ gulp.task('fonts', () => {
 gulp.task('extras', () => {
   return gulp.src([
     'app/*.*',
-    '!app/*.html'
+    // '!app/*.html'
+    '!app/*.php'
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));
@@ -99,16 +101,12 @@ gulp.task('serve', ['styles', 'fonts'], () => {
   browserSync({
     notify: false,
     port: 9000,
-    server: {
-      baseDir: ['.tmp', 'app'],
-      routes: {
-        '/bower_components': 'bower_components'
-      }
-    }
+    proxy: "http://localhost/yeoman/exp2/app"
   });
 
   gulp.watch([
     'app/*.html',
+    'app/*.php',
     'app/scripts/**/*.js',
     'app/images/**/*',
     '.tmp/fonts/**/*'
@@ -154,7 +152,7 @@ gulp.task('wiredep', () => {<% if (includeSass) { %>
     }))
     .pipe(gulp.dest('app/styles'));
 <% } %>
-  gulp.src('app/*.html')
+  gulp.src('app/*.php')
     .pipe(wiredep({<% if (includeBootstrap) { if (includeSass) { %>
       exclude: ['bootstrap-sass'],<% } else { %>
       exclude: ['bootstrap.js'],<% }} %>
@@ -163,6 +161,7 @@ gulp.task('wiredep', () => {<% if (includeSass) { %>
     .pipe(gulp.dest('app'));
 });
 
+// gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
