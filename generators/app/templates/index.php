@@ -39,6 +39,12 @@
 
       <div class="jumbotron">
         <h1>'Allo, 'Allo!</h1>
+        <p>
+          PHP workin
+          <?php for($i = 1; $i<10; $i++): ?>
+            <?php echo $i ?> - 
+          <?php endfor; ?><br>
+        </p>
         <p class="lead">Always a pleasure scaffolding your apps.</p>
         <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
       </div>

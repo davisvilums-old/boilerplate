@@ -21,6 +21,16 @@ npm-check-updates -u
 npm install
 ```
 
+Install the generator
+```bash
+1. git clone https://... blog
+2. cd blog && npm install
+3. cd generators/generator-boilerplate && npm link
+```
+Run the generator
+```bash
+yo boilerplate
+```
 
 
 
